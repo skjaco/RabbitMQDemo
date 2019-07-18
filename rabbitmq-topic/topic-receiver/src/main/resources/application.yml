@@ -1,0 +1,10 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: topic-receiver
+  rabbitmq:
+    username: admin
+    password: admin
+    host: 192.168.108.128
+    port: 5672
