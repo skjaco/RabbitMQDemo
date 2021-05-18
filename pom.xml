@@ -13,6 +13,8 @@
         <module>rabbitmq-fanout</module>
         <module>rabbitmq-topic</module>
         <module>rabbitmq-header</module>
+        <module>payment-sender</module>
+        <module>payment-receiver</module>
     </modules>
 
     <parent>
