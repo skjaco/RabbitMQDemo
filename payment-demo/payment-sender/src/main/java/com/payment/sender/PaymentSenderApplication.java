@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @since 2021/05/18 16:41
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.payment.sender"})
+@ComponentScan(basePackages = {"com.payment.sender.*"})
 public class PaymentSenderApplication {
   public static void main(String[] args) {
     SpringApplication.run(PaymentSenderApplication.class, args);

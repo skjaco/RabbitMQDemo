@@ -51,30 +51,32 @@ public class SenderConfiguration {
     args.put("x-dead-letter-exchange", DELAY_EXCHANGE);
     // x-dead-letter-routing-key  这里声明当前队列的死信路由key
     args.put("x-dead-letter-routing-key", DELAY_QUEUE_2_ROUTE_KEY);
+    // x-message-ttl  声明队列的TTL
+    args.put("x-message-ttl", 2000);
     return QueueBuilder.durable(DELAY_QUEUE_1).withArguments(args).build();
   }
 
   @Bean
   public Queue delayQueue2() {
-    Map<String, Object> args = new HashMap<>(2);
+    Map<String, Object> args = new HashMap<>(4);
     // x-dead-letter-exchange    这里声明当前队列绑定的死信交换机
     args.put("x-dead-letter-exchange", DELAY_EXCHANGE);
     // x-dead-letter-routing-key  这里声明当前队列的死信路由key
     args.put("x-dead-letter-routing-key", DELAY_QUEUE_3_ROUTE_KEY);
     // x-message-ttl  声明队列的TTL
-    args.put("x-message-ttl", 6000);
+    args.put("x-message-ttl", 5000);
     return QueueBuilder.durable(DELAY_QUEUE_2).withArguments(args).build();
   }
 
   @Bean
   public Queue delayQueue3() {
-    Map<String, Object> args = new HashMap<>(2);
+    Map<String, Object> args = new HashMap<>(4);
     // x-dead-letter-exchange    这里声明当前队列绑定的死信交换机
     args.put("x-dead-letter-exchange", DEAD_EXCHANGE);
     // x-dead-letter-routing-key  这里声明当前队列的死信路由key
     args.put("x-dead-letter-routing-key", DEAD_LETTER_QUEUE_ROUTE_KEY);
     // x-message-ttl  声明队列的TTL
-    args.put("x-message-ttl", 6000);
+    args.put("x-message-ttl", 10000);
     return QueueBuilder.durable(DELAY_QUEUE_3).withArguments(args).build();
   }
 
