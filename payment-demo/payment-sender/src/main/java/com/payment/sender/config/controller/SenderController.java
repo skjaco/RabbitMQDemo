@@ -20,7 +20,8 @@ public class SenderController {
   private RabbitTemplate rabbitTemplate;
 
   @GetMapping("/{msg}")
-  public void send(@PathVariable("msg")String msg){
+  public void send(@PathVariable("msg") String msg) {
+    System.out.println("send [" + msg + "] success");
     rabbitTemplate.convertAndSend(SenderConfiguration.DELAY_EXCHANGE, SenderConfiguration.DELAY_QUEUE_1_ROUTE_KEY, msg);
   }
 }

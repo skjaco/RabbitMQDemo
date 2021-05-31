@@ -14,8 +14,8 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>paymen-sender</module>
-        <module>paymen-receiver</module>
+        <module>payment-sender</module>
+        <module>payment-receiver</module>
     </modules>
 
 
