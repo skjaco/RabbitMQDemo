@@ -52,7 +52,7 @@ public class SenderConfiguration {
     // x-dead-letter-routing-key  这里声明当前队列的死信路由key
     args.put("x-dead-letter-routing-key", DELAY_QUEUE_2_ROUTE_KEY);
     // x-message-ttl  声明队列的TTL
-    args.put("x-message-ttl", 2000);
+    args.put("x-message-ttl", 5000);
     return QueueBuilder.durable(DELAY_QUEUE_1).withArguments(args).build();
   }
 
@@ -64,7 +64,7 @@ public class SenderConfiguration {
     // x-dead-letter-routing-key  这里声明当前队列的死信路由key
     args.put("x-dead-letter-routing-key", DELAY_QUEUE_3_ROUTE_KEY);
     // x-message-ttl  声明队列的TTL
-    args.put("x-message-ttl", 5000);
+    args.put("x-message-ttl", 10000);
     return QueueBuilder.durable(DELAY_QUEUE_2).withArguments(args).build();
   }
 
@@ -76,7 +76,7 @@ public class SenderConfiguration {
     // x-dead-letter-routing-key  这里声明当前队列的死信路由key
     args.put("x-dead-letter-routing-key", DEAD_LETTER_QUEUE_ROUTE_KEY);
     // x-message-ttl  声明队列的TTL
-    args.put("x-message-ttl", 10000);
+    args.put("x-message-ttl", 120000);
     return QueueBuilder.durable(DELAY_QUEUE_3).withArguments(args).build();
   }
 
